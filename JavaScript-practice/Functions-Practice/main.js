@@ -14,11 +14,8 @@ function factorial(num) {
     for(var i = 1; i < num ; i++) {
         
         result = result * i; 
-    }
-    
+    }   
     return result; 
-    
-   
 }
 
 
