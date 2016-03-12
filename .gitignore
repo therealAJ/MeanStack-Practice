@@ -72,7 +72,7 @@ coverage
 build/Release
 
 # Dependency directories
-/User-Story/node_modules
+\User-Story\node_modules
 node_modules
 jspm_packages
 
