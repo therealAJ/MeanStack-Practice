@@ -6,8 +6,8 @@ var app = express();
 var mongoose = require('mongoose');
 
 
-mongoose.connect(config.database, function(err) {
-    if(err) {
+mongoose.connect(config.database, function (err) {
+    if (err) {
         console.log(err);
     } else {
         console.log("connected to the database");
@@ -15,7 +15,9 @@ mongoose.connect(config.database, function(err) {
 });
 
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
@@ -24,11 +26,11 @@ app.use(express.static(__dirname + '/public'));
 
 
 var api = require('./app/routes/api.js')(app, express);
-app.use('/api' , api);
+app.use('/api', api);
 
 
-app.get('*', function(req, res) {
-    res.sendFile(__dirname + '/public/views/index.html');
+app.get('*', function (req, res) {
+    res.sendFile(__dirname + '/public/app/views/index.html');
 })
 
 app.listen(config.port, function (err) {
